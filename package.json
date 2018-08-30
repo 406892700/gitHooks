@@ -4,17 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "node ./scripts/validate"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chalk": "^2.4.1",
     "husky": "^1.0.0-rc.13"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
+      "commit-msg": "node ./scripts/validate"
     }
   }
 }

@@ -1,5 +1,7 @@
 const fs = require('fs')
 const path = require('path')
+const chalk = require('chalk')
+const { exec } require('child_process')
 const standardMsgPrefix = [
   'feat', 'fix', 'docs', 'style', 'test', 'refactor', 'chore'
 ]
@@ -9,11 +11,13 @@ const gitPath = path.resolve(__dirname, '../.git/')
 const commitMsg = fs.readFileSync(path.join(gitPath, 'COMMIT_EDITMSG')).toString().trim()
 
 const length = standardMsgPrefix.length
-for (let i = 0; i < length; i++) {
-  const reg = new RegExp('^'+standardMsgPrefix[i]+'[\s]{1}')
-  if (reg.test(commitMsg)) {
-    process.exit(0)
-  } else {
-    process.exit(1)
-  }
+
+const reg = new RegExp('^('+standardMsgPrefix.join('|')+')\\s{1}')
+console.log(commitMsg)
+if (reg.test(commitMsg)) {
+  process.exit(0)
+} else {
+  console.log('格式有误~')
+  exec('doge');
+  process.exit(1)
 }
