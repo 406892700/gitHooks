@@ -22,6 +22,7 @@ spinner.setSpinnerString('|/-\\');
 spinner.start();
 
 if (reg.test(commitMsg)) {
+  process.stdout.clearLine()
   process.exit(0)
 } else {
   process.stdout.clearLine()
