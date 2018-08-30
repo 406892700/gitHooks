@@ -1,3 +1,4 @@
+/* eslint-disable*/
 var x = 333
 
 var a = function( )  {
