@@ -3,6 +3,7 @@
 const nodegit = require('nodegit')
 const chalk = require('chalk')
 const path = require('path')
+const Spinner = require('cli-spinner').Spinner;
 const { exec } = require('child_process')
 
 nodegit.Repository.open(path.resolve(__dirname, '../.git'))
@@ -30,6 +31,9 @@ nodegit.Repository.open(path.resolve(__dirname, '../.git'))
           }
         })
         console.log('-------------------------------------------------')
+        const Spinner = require('cli-spinner').Spinner;
+        spinner.setSpinnerString('|/-\\');
+        spinner.start();
         exec(`./node_modules/.bin/eslint ${fileList.join(' ')} --color --ext .js`, (err, stdout) => {
           if (err && stdout) { // 报错
             console.log(stdout)
