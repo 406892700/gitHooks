@@ -1,0 +1,15 @@
+{
+  "name": "git-standard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "node ./scripts/validate"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^1.0.0-rc.13"
+  }
+}
