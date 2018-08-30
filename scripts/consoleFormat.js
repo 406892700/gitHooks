@@ -7,7 +7,7 @@ const standardSample = [
   ['test', '新增或修改测试用例'],
   ['refactor', '重构代码或其他优化举措'],
   ['chore', '项目工程方面的改动,代码逻辑并未产生任何变化'],
-]
+] 
 
 module.exports = {
   consoleFormat: () => {

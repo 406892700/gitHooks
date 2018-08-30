@@ -8,7 +8,6 @@ const { exec } = require('child_process')
 nodegit.Repository.open(path.resolve(__dirname, '../.git'))
   .then((repo) => {
     repo.getStatus().then((statuses) => {
-      console.log(222222)
       function statusToText(status) {
         const words = []
         if (status.isNew()) { words.push('NEW') }
