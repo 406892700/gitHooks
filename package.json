@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "node ./script/pre-commit.js"
+    "lint": "node ./scripts/pre-commit.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node ./scripts/validate",
+      "commit-msg": "node ./scripts/commit-msg.js",
       "pre-commit": "npm run lint"
     }
   },
