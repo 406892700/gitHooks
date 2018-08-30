@@ -1,5 +1,5 @@
-console.log('validating...');
-
+console.log('validating...')
+console.log(process.argv)
 setTimeout(() => {
-  process.exit(1)
-}, 2000);
+  process.exit(0)
+}, 2000)
