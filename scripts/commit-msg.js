@@ -1,7 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
-const { exec } require('child_process')
+const chalkAnimation = require('chalk-animation')
+const { exec } = require('child_process')
+const Spinner = require('cli-spinner').Spinner;
+const { consoleFormat, conosleError, conosleWarn } = require('./consoleFormat')
+
 const standardMsgPrefix = [
   'feat', 'fix', 'docs', 'style', 'test', 'refactor', 'chore'
 ]
@@ -13,11 +17,15 @@ const commitMsg = fs.readFileSync(path.join(gitPath, 'COMMIT_EDITMSG')).toString
 const length = standardMsgPrefix.length
 
 const reg = new RegExp('^('+standardMsgPrefix.join('|')+')\\s{1}')
-console.log(commitMsg)
+var spinner = new Spinner('验证提交信息..');
+spinner.setSpinnerString('|/-\\');
+spinner.start();
+
 if (reg.test(commitMsg)) {
   process.exit(0)
 } else {
-  console.log('格式有误~')
-  exec('doge');
+  process.stdout.clearLine()
+  conosleError(`提交信息 \'${commitMsg}\' 不符合标准`)
+  consoleFormat()
   process.exit(1)
 }
