@@ -23,6 +23,7 @@ spinner.start();
 
 if (reg.test(commitMsg)) {
   process.stdout.clearLine()
+  console.log('')
   process.exit(0)
 } else {
   process.stdout.clearLine()
