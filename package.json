@@ -5,11 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "precommit": "node ./scripts/validate"
+    "lint": "node ./scripts/validate"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "husky": "^1.0.0-rc.13"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+    }
   }
 }
