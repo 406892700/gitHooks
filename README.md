@@ -24,5 +24,17 @@
 
 所以，可以考虑使用只验证自己修改的文件
 
+### 实例
+#### 提交信息
+```
+ git commit -m '新增增量验证'
+```
+#### 结果
+![123](https://global.uban360.com/sfs/file?digest=fid4127a23ad88a89f31ecc7870a8639f85&fileType=2)
+#### 提交信息
+代码存在格式问题时
+#### 结果
+![234](https://global.uban360.com/sfs/file?digest=fidecdf1529b6aabec8787c4e160f185a74&fileType=2)
+
 ### 参考文档
 [自定义 Git - Git 钩子](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)

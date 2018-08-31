@@ -31,10 +31,11 @@ nodegit.Repository.open(path.resolve(__dirname, '../.git'))
           }
         })
         console.log('-------------------------------------------------')
-        const Spinner = require('cli-spinner').Spinner;
+        var spinner = new Spinner('eslint验证中..');
         spinner.setSpinnerString('|/-\\');
         spinner.start();
         exec(`./node_modules/.bin/eslint ${fileList.join(' ')} --color --ext .js`, (err, stdout) => {
+          process.stdout.clearLine()
           if (err && stdout) { // 报错
             console.log(stdout)
             process.exit(1)
